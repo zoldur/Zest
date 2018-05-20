@@ -10,7 +10,7 @@ COIN_TGZ='https://github.com/ZestFoundation/ZestCoin/releases/download/v1.0.0/ze
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='Zest'
 COIN_PORT=22030
-RPC_PORT=220131
+RPC_PORT=22031
 
 NODEIP=$(curl -s4 icanhazip.com)
 
@@ -118,7 +118,7 @@ function update_config() {
   cat << EOF >> $CONFIGFOLDER/$CONFIG_FILE
 logintimestamps=1
 maxconnections=256
-#bind=$NODEIP
+bind=$NODEIP
 masternode=1
 externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
